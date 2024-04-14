@@ -8,6 +8,7 @@ size_t WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *user
   char *ptr = realloc(mem->memory, mem->size + realsize + 1);
   if(ptr == NULL) {
     printf("error: not enough memory\n");
+
     return 0;
   }
 
@@ -49,6 +50,7 @@ cJSON* parseJSONFile(const char* path) {
 
 	fclose(f);
 	
+	// TODO: use cJSON_ParseWithOpts(buffer, end_return_ptr, required_null_terminated)	
 	cJSON *jptr = cJSON_Parse(buffer);
 	if (!cJSON_GetErrorPtr()) {
 		printf("Failed to parse JSON i think...");

@@ -8,17 +8,22 @@ bbfs.o: bbfs.c util.h cJSON.h
 > gcc -c bbfs.c -lcurl -g `pkg-config fuse --cflags --libs`
 
 util.o: util.c cJSON.h
-> gcc -c util.c
+> gcc -g -c util.c
 
 cJSON.o: cJSON.c
-> gcc -c cJSON.c
+> gcc -g -c cJSON.c
 
 clean:
 > rm -rf bbfs
+> rm -rf test
+> mkdir test
+
+unmount:
+> fusermount3 -u test
 
 wipe:
 > rm -rf bbfs
 > rm -rf *.o
 
 test: build
-> ./curl 
+> ./bbfs test 

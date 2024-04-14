@@ -25,7 +25,7 @@ static int bb_getattr( const char* path, struct stat *st ) {
 	st->st_atime = time( NULL );
 	st->st_mtime = time( NULL );
 
-	if ( strstr( path, ".txt") != 0 ) {
+	if ( strstr( path, ".txt") == NULL ) {
 		st->st_mode = S_IFDIR | 0755;
 		st->st_nlink = 2;
 	}
@@ -46,8 +46,11 @@ static int bb_readdir( const char *path, void *buffer, fuse_fill_dir_t filler, o
 	if (strcmp(path, "/") == 0) {
 		// TODO: Add root path JSON parse
 		cJSON *res = parseJSONFile("endpoints.json");
-		cJSON_Print(res);
-		
+		if (res == NULL) {
+			printf("JSON buffer is NULL");
+			return -1;
+		}
+		cJSON_Print(res);	
 	}
 
 	return 0;
@@ -107,5 +110,14 @@ static struct fuse_operations operations = {
 
 int main( int argc, char *argv[] )
 {
+	cJSON *res = parseJSONFile("endpoints.json");
+	if (res == NULL)
+    	{
+        	const char *error_ptr = cJSON_GetErrorPtr();
+        	if (error_ptr != NULL)
+        	{
+            		fprintf(stderr, "Error before: %s\n", error_ptr);
+        	}
+	}
 	return fuse_main( argc, argv, &operations, NULL );
 }
