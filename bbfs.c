@@ -44,15 +44,23 @@ static int bb_readdir( const char *path, void *buffer, fuse_fill_dir_t filler, o
 	filler(buffer, "..", NULL, 0);
 
 	if (strcmp(path, "/") == 0) {
-		// TODO: Add root path JSON parse
-		cJSON *res = parseJSONFile("endpoints.json");
-		if (res == NULL) {
-			printf("JSON buffer is NULL");
+		const char *end_ptr;
+		cJSON *res = parseJSONFile("endpoints.json", end_ptr);
+		if (!end_ptr) {
+			cJSON_Delete(res);
 			return -1;
 		}
-		cJSON_Print(res);	
+		cJSON *child = res->child;
+//		printcJSON(res->child);
+		int count = 0;
+		while (child->next) {
+			filler(buffer, child->string, NULL, 0);
+			fprintf(stdout, "%d\n", count);
+			count++;
+			child = child->next;
+		}		
+		cJSON_Delete(res);
 	}
-
 	return 0;
 }
 
@@ -110,14 +118,7 @@ static struct fuse_operations operations = {
 
 int main( int argc, char *argv[] )
 {
-	cJSON *res = parseJSONFile("endpoints.json");
-	if (res == NULL)
-    	{
-        	const char *error_ptr = cJSON_GetErrorPtr();
-        	if (error_ptr != NULL)
-        	{
-            		fprintf(stderr, "Error before: %s\n", error_ptr);
-        	}
-	}
+	//char* string = cJSON_Print(res);
+	//printf("%s\n", string);
 	return fuse_main( argc, argv, &operations, NULL );
 }

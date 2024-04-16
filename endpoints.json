@@ -5,9 +5,9 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": [
@@ -17,9 +17,9 @@
             "date",
             "leagueListId",
             "gameType",
-            "fields",
+            "fields"
         ],
-        "required_params": [["teamId"], ["leagueId"], ["leagueListid"]],
+        "required_params": [["teamId"], ["leagueId"], ["leagueListid"]]
     },
     "awards": {
         "url": "https://statsapi.mlb.com/v1/awards{awardId}{recipients}",
@@ -27,30 +27,30 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "awardId": {
                 "type": "str",
-                "default": None,
-                "leading_slash": True,
-                "trailing_slash": False,
-                "required": False,
+                "default": null,
+                "leading_slash": true,
+                "trailing_slash": false,
+                "required": false
             },
             "recipients": {
                 "type": "bool",
-                "default": True,
+                "default": true,
                 "True": "/recipients",
                 "False": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": False,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": false
+            }
         },
         "query_params": ["sportId", "leagueId", "season", "hydrate", "fields"],
         "required_params": [[]],
-        "note": "Call awards endpoint with no parameters to return a list of awardIds.",
+        "note": "Call awards endpoint with no parameters to return a list of awardIds."
     },
     "conferences": {
         "url": "https://statsapi.mlb.com/v1/conferences",
@@ -58,13 +58,13 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": ["conferenceId", "season", "fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "divisions": {
         "url": "https://statsapi.mlb.com/v1/divisions",
@@ -72,14 +72,14 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": ["divisionId", "leagueId", "sportId"],
         "required_params": [[]],
-        "note": "Call divisions endpoint with no parameters to return a list of divisions.",
+        "note": "Call divisions endpoint with no parameters to return a list of divisions."
     },
     "draft": {
         "url": "https://statsapi.mlb.com/v1/draft{prospects}{year}{latest}",
@@ -87,35 +87,35 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "prospects": {
                 "type": "bool",
-                "default": False,
+                "default": false,
                 "True": "/prospects",
                 "False": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": False,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": false
             },
             "year": {
                 "type": "str",
                 "default": "",
-                "leading_slash": True,
-                "trailing_slash": False,
-                "required": False,
+                "leading_slash": true,
+                "trailing_slash": false,
+                "required": false
             },
             "latest": {
                 "type": "bool",
-                "default": False,
+                "default": false,
                 "True": "/latest",
                 "False": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": False,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": false
+            }
         },
         "query_params": [
             "limit",
@@ -128,10 +128,10 @@
             "position",
             "teamId",
             "playerId",
-            "bisPlayerId",
+            "bisPlayerId"
         ],
         "required_params": [[]],
-        "note": 'No query parameters are honored when "latest" endpoint is queried (year is still required). Prospects and Latest cannot be used together.',
+        "note": "No query parameters are honored when latest endpoint is queried (year is still required). Prospects and Latest cannot be used together."
     },
     "game": {
         "url": "https://statsapi.mlb.com/v1/game/{gamePk}/feed/live",
@@ -139,20 +139,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1.1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "gamePk": {
                 "type": "str",
                 "default": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["timecode", "hydrate", "fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "game_diff": {
         "url": "https://statsapi.mlb.com/v1/game/{gamePk}/feed/live/diffPatch",
@@ -160,20 +160,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1.1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "gamePk": {
                 "type": "str",
                 "default": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["startTimecode", "endTimecode"],
-        "required_params": [["startTimecode", "endTimecode"]],
+        "required_params": [["startTimecode", "endTimecode"]]
     },
     "game_timestamps": {
         "url": "https://statsapi.mlb.com/v1/game/{gamePk}/feed/live/timestamps",
@@ -181,20 +181,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1.1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "gamePk": {
                 "type": "str",
                 "default": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": [],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "game_changes": {
         "url": "https://statsapi.mlb.com/v1/game/changes",
@@ -202,13 +202,13 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": ["updatedSince", "sportId", "gameType", "season", "fields"],
-        "required_params": [["updatedSince"]],
+        "required_params": [["updatedSince"]]
     },
     "game_contextMetrics": {
         "url": "https://statsapi.mlb.com/v1/game/{gamePk}/contextMetrics",
@@ -216,20 +216,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "gamePk": {
                 "type": "str",
                 "default": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["timecode", "fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "game_winProbability": {
         "url": "https://statsapi.mlb.com/v1/game/{gamePk}/winProbability",
@@ -237,21 +237,21 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "gamePk": {
                 "type": "str",
                 "default": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["timecode", "fields"],
         "required_params": [[]],
-        "note": "If you only want the current win probability for each team, try the game_contextMetrics endpoint instad.",
+        "note": "If you only want the current win probability for each team, try the game_contextMetrics endpoint instad."
     },
     "game_boxscore": {
         "url": "https://statsapi.mlb.com/v1/game/{gamePk}/boxscore",
@@ -259,20 +259,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "gamePk": {
                 "type": "str",
                 "default": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["timecode", "fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "game_content": {
         "url": "https://statsapi.mlb.com/v1/game/{gamePk}/content",
@@ -280,20 +280,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "gamePk": {
                 "type": "str",
                 "default": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["highlightLimit"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "game_color": {
         "url": "https://statsapi.mlb.com/v1/game/{gamePk}/feed/color",
@@ -301,20 +301,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "gamePk": {
                 "type": "str",
                 "default": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["timecode", "fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "game_color_diff": {
         "url": "https://statsapi.mlb.com/v1/game/{gamePk}/feed/color/diffPatch",
@@ -322,20 +322,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "gamePk": {
                 "type": "str",
                 "default": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["startTimecode", "endTimecode"],
-        "required_params": [["startTimeCode", "endTimeCode"]],
+        "required_params": [["startTimeCode", "endTimeCode"]]
     },
     "game_color_timestamps": {
         "url": "https://statsapi.mlb.com/v1/game/{gamePk}/feed/color/timestamps",
@@ -343,20 +343,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "gamePk": {
                 "type": "str",
                 "default": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": [],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "game_linescore": {
         "url": "https://statsapi.mlb.com/v1/game/{gamePk}/linescore",
@@ -364,20 +364,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "gamePk": {
                 "type": "str",
                 "default": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["timecode", "fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "game_playByPlay": {
         "url": "https://statsapi.mlb.com/v1/game/{gamePk}/playByPlay",
@@ -385,20 +385,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "gamePk": {
                 "type": "str",
                 "default": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["timecode", "fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "gamePace": {
         "url": "https://statsapi.mlb.com/v1/gamePace",
@@ -406,9 +406,9 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": [
@@ -423,9 +423,9 @@
             "venueIds",
             "orgType",
             "includeChildren",
-            "fields",
+            "fields"
         ],
-        "required_params": [["season"]],
+        "required_params": [["season"]]
     },
     "highLow": {
         "url": "https://statsapi.mlb.com/v1/highLow/{orgType}",
@@ -433,17 +433,17 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "orgType": {
                 "type": "str",
                 "default": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": [
             "statGroup",
@@ -454,10 +454,10 @@
             "leagueId",
             "sportIds",
             "limit",
-            "fields",
+            "fields"
         ],
         "required_params": [["sortStat", "season"]],
-        "note": "Valid values for orgType parameter: player, team, division, league, sport, types.",
+        "note": "Valid values for orgType parameter: player, team, division, league, sport, types."
     },
     "homeRunDerby": {
         "url": "https://statsapi.mlb.com/v1/homeRunDerby/{gamePk}{bracket}{pool}",
@@ -465,38 +465,38 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "gamePk": {
                 "type": "str",
                 "default": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "bracket": {
                 "type": "bool",
-                "default": False,
+                "default": false,
                 "True": "/bracket",
                 "False": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": False,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": false
             },
             "pool": {
                 "type": "bool",
-                "default": False,
+                "default": false,
                 "True": "/pool",
                 "False": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": False,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": false
+            }
         },
         "query_params": ["fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "league": {
         "url": "https://statsapi.mlb.com/v1/league",
@@ -504,13 +504,13 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": ["sportId", "leagueIds", "seasons", "fields"],
-        "required_params": [["sportId"], ["leagueIds"]],
+        "required_params": [["sportId"], ["leagueIds"]]
     },
     "league_allStarBallot": {
         "url": "https://statsapi.mlb.com/v1/league/{leagueId}/allStarBallot",
@@ -518,20 +518,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "leagueId": {
                 "type": "str",
                 "default": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["season", "fields"],
-        "required_params": [["season"]],
+        "required_params": [["season"]]
     },
     "league_allStarWriteIns": {
         "url": "https://statsapi.mlb.com/v1/league/{leagueId}/allStarWriteIns",
@@ -539,20 +539,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "leagueId": {
                 "type": "str",
                 "default": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["season", "fields"],
-        "required_params": [["season"]],
+        "required_params": [["season"]]
     },
     "league_allStarFinalVote": {
         "url": "https://statsapi.mlb.com/v1/league/{leagueId}/allStarFinalVote",
@@ -560,20 +560,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "leagueId": {
                 "type": "str",
                 "default": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["season", "fields"],
-        "required_params": [["season"]],
+        "required_params": [["season"]]
     },
     "people": {
         "url": "https://statsapi.mlb.com/v1/people",
@@ -581,13 +581,13 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": ["personIds", "hydrate", "fields"],
-        "required_params": [["personIds"]],
+        "required_params": [["personIds"]]
     },
     "people_changes": {
         "url": "https://statsapi.mlb.com/v1/people/changes",
@@ -595,13 +595,13 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": ["updatedSince", "fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "people_freeAgents": {
         "url": "https://statsapi.mlb.com/v1/people/freeAgents",
@@ -609,20 +609,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "leagueId": {
                 "type": "str",
                 "default": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["order", "hydrate", "fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "person": {
         "url": "https://statsapi.mlb.com/v1/people/{personId}",
@@ -630,20 +630,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "personId": {
                 "type": "str",
-                "default": None,
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "default": null,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["hydrate", "fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "person_stats": {
         "url": "https://statsapi.mlb.com/v1/people/{personId}/stats/game/{gamePk}",
@@ -651,28 +651,28 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "personId": {
                 "type": "str",
-                "default": None,
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "default": null,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "gamePk": {
                 "type": "str",
-                "default": None,
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "default": null,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["fields"],
         "required_params": [[]],
-        "note": 'Specify "current" instead of a gamePk for a player\'s current game stats.',
+        "note": "Specify 'current' instead of a gamePk for a player's current game stats."
     },
     "jobs": {
         "url": "https://statsapi.mlb.com/v1/jobs",
@@ -680,13 +680,13 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": ["jobType", "sportId", "date", "fields"],
-        "required_params": [["jobType"]],
+        "required_params": [["jobType"]]
     },
     "jobs_umpires": {
         "url": "https://statsapi.mlb.com/v1/jobs/umpires",
@@ -694,13 +694,13 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": ["sportId", "date", "fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "jobs_umpire_games": {
         "url": "https://statsapi.mlb.com/v1/jobs/umpires/games/{umpireId}",
@@ -708,20 +708,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "umpireId": {
                 "type": "str",
-                "default": None,
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "default": null,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["season", "fields"],
-        "required_params": [["season"]],
+        "required_params": [["season"]]
     },
     "jobs_datacasters": {
         "url": "https://statsapi.mlb.com/v1/jobs/datacasters",
@@ -729,13 +729,13 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": ["sportId", "date", "fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "jobs_officialScorers": {
         "url": "https://statsapi.mlb.com/v1/jobs/officialScorers",
@@ -743,13 +743,13 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": ["timecode", "fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "schedule": {
         "url": "https://statsapi.mlb.com/v1/schedule",
@@ -757,9 +757,9 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": [
@@ -777,9 +777,9 @@
             "startDate",
             "endDate",
             "opponentId",
-            "fields",
+            "fields"
         ],
-        "required_params": [["sportId"], ["gamePk"], ["gamePks"]],
+        "required_params": [["sportId"], ["gamePk"], ["gamePks"]]
     },
     "schedule_tied": {
         "url": "https://statsapi.mlb.com/v1/schedule/games/tied",
@@ -787,13 +787,13 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": ["gameTypes", "season", "hydrate", "fields"],
-        "required_params": [["season"]],
+        "required_params": [["season"]]
     },
     "schedule_postseason": {
         "url": "https://statsapi.mlb.com/v1/schedule/postseason",
@@ -801,9 +801,9 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": [
@@ -813,9 +813,9 @@
             "sportId",
             "season",
             "hydrate",
-            "fields",
+            "fields"
         ],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "schedule_postseason_series": {
         "url": "https://statsapi.mlb.com/v1/schedule/postseason/series",
@@ -823,9 +823,9 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": [
@@ -834,9 +834,9 @@
             "teamId",
             "sportId",
             "season",
-            "fields",
+            "fields"
         ],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "schedule_postseason_tuneIn": {
         "url": "https://statsapi.mlb.com/v1/schedule/postseason/tuneIn",
@@ -844,14 +844,14 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": ["teamId", "sportId", "season", "hydrate", "fields"],
         "required_params": [[]],
-        "note": "The schedule_postseason_tuneIn endpoint appears to return no data.",
+        "note": "The schedule_postseason_tuneIn endpoint appears to return no data."
     },
     "seasons": {
         "url": "https://statsapi.mlb.com/v1/seasons{all}",
@@ -859,23 +859,23 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "all": {
                 "type": "bool",
-                "default": False,
+                "default": false,
                 "True": "/all",
                 "False": "",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": False,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": false
+            }
         },
         "query_params": ["season", "sportId", "divisionId", "leagueId", "fields"],
         "required_params": [["sportId"], ["divisionId"], ["leagueId"]],
-        "note": 'Include "all" parameter with value of True to query all seasons. The divisionId and leagueId parameters are supported when "all" is used.',
+        "note": "Include 'all' parameter with value of True to query all seasons. The divisionId and leagueId parameters are supported when 'all' is used."
     },
     "season": {
         "url": "https://statsapi.mlb.com/v1/seasons/{seasonId}",
@@ -883,20 +883,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "seasonId": {
                 "type": "str",
-                "default": False,
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "default": false,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["sportId", "fields"],
-        "required_params": [["sportId"]],
+        "required_params": [["sportId"]]
     },
     "sports": {
         "url": "https://statsapi.mlb.com/v1/sports",
@@ -904,13 +904,13 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": ["sportId", "fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "sports_players": {
         "url": "https://statsapi.mlb.com/v1/sports/{sportId}/players",
@@ -918,20 +918,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "sportId": {
                 "type": "str",
                 "default": "1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["season", "gameType", "fields"],
-        "required_params": [["season"]],
+        "required_params": [["season"]]
     },
     "standings": {
         "url": "https://statsapi.mlb.com/v1/standings",
@@ -939,9 +939,9 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": [
@@ -950,9 +950,9 @@
             "standingsTypes",
             "date",
             "hydrate",
-            "fields",
+            "fields"
         ],
-        "required_params": [["leagueId"]],
+        "required_params": [["leagueId"]]
     },
     "stats": {
         "url": "https://statsapi.mlb.com/v1/stats",
@@ -960,9 +960,9 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": [
@@ -982,10 +982,10 @@
             "hydrate",
             "fields",
             "personId",
-            "metrics",
+            "metrics"
         ],
         "required_params": [["stats", "group"]],
-        "note": "If no limit is specified, the response will be limited to 50 records.",
+        "note": "If no limit is specified, the response will be limited to 50 records."
     },
     "stats_leaders": {
         "url": "https://statsapi.mlb.com/v1/stats/leaders",
@@ -993,9 +993,9 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": [
@@ -1009,10 +1009,10 @@
             "hydrate",
             "limit",
             "fields",
-            "statType",
+            "statType"
         ],
         "required_params": [["leaderCategories"]],
-        "note": "If excluding season parameter to get all time leaders, include statType=statsSingleSeason or you will likely not get any results.",
+        "note": "If excluding season parameter to get all time leaders, include statType=statsSingleSeason or you will likely not get any results."
     },
     "stats_streaks": {
         "url": "https://statsapi.mlb.com/v1/stats/streaks",
@@ -1020,9 +1020,9 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": [
@@ -1033,10 +1033,10 @@
             "sportId",
             "limit",
             "hydrate",
-            "fields",
+            "fields"
         ],
         "required_params": [["streakType", "streakSpan", "season", "sportId", "limit"]],
-        "note": 'Valid streakType values: "hittingStreakOverall" "hittingStreakHome" "hittingStreakAway" "onBaseOverall" "onBaseHome" "onBaseAway". Valid streakSpan values: "career" "season" "currentStreak" "currentStreakInSeason" "notable" "notableInSeason".',
+        "note": "Valid streakType values: 'hittingStreakOverall' 'hittingStreakHome' 'hittingStreakAway' 'onBaseOverall' 'onBaseHome' 'onBaseAway'. Valid streakSpan values: 'career' 'season' 'currentStreak' 'currentStreakInSeason' 'notable' 'notableInSeason'."
     },
     "teams": {
         "url": "https://statsapi.mlb.com/v1/teams",
@@ -1044,9 +1044,9 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": [
@@ -1057,9 +1057,9 @@
             "sportIds",
             "gameType",
             "hydrate",
-            "fields",
+            "fields"
         ],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "teams_history": {
         "url": "https://statsapi.mlb.com/v1/teams/history",
@@ -1067,13 +1067,13 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": ["teamIds", "startSeason", "endSeason", "fields"],
-        "required_params": [["teamIds"]],
+        "required_params": [["teamIds"]]
     },
     "teams_stats": {
         "url": "https://statsapi.mlb.com/v1/teams/stats",
@@ -1081,9 +1081,9 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": [
@@ -1096,10 +1096,10 @@
             "sortStat",
             "fields",
             "startDate",
-            "endDate",
+            "endDate"
         ],
         "required_params": [["season", "group", "stats"]],
-        "note": "Use meta('statGroups') to look up valid values for group, and meta('statTypes') for valid values for stats.",
+        "note": "Use meta('statGroups') to look up valid values for group, and meta('statTypes') for valid values for stats."
     },
     "teams_affiliates": {
         "url": "https://statsapi.mlb.com/v1/teams/affiliates",
@@ -1107,13 +1107,13 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": ["teamIds", "sportId", "season", "hydrate", "fields"],
-        "required_params": [["teamIds"]],
+        "required_params": [["teamIds"]]
     },
     "team": {
         "url": "https://statsapi.mlb.com/v1/teams/{teamId}",
@@ -1121,20 +1121,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "teamId": {
                 "type": "str",
-                "default": None,
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "default": null,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["season", "sportId", "hydrate", "fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "team_alumni": {
         "url": "https://statsapi.mlb.com/v1/teams/{teamId}/alumni",
@@ -1142,20 +1142,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "teamId": {
                 "type": "str",
-                "default": None,
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "default": null,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["season", "group", "hydrate", "fields"],
-        "required_params": [["season", "group"]],
+        "required_params": [["season", "group"]]
     },
     "team_coaches": {
         "url": "https://statsapi.mlb.com/v1/teams/{teamId}/coaches",
@@ -1163,20 +1163,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "teamId": {
                 "type": "str",
-                "default": None,
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "default": null,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["season", "date", "fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "team_personnel": {
         "url": "https://statsapi.mlb.com/v1/teams/{teamId}/personnel",
@@ -1184,20 +1184,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "teamId": {
                 "type": "str",
-                "default": None,
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "default": null,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["date", "fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "team_leaders": {
         "url": "https://statsapi.mlb.com/v1/teams/{teamId}/leaders",
@@ -1205,17 +1205,17 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "teamId": {
                 "type": "str",
-                "default": None,
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "default": null,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": [
             "leaderCategories",
@@ -1223,9 +1223,9 @@
             "leaderGameTypes",
             "hydrate",
             "limit",
-            "fields",
+            "fields"
         ],
-        "required_params": [["leaderCategories", "season"]],
+        "required_params": [["leaderCategories", "season"]]
     },
     "team_roster": {
         "url": "https://statsapi.mlb.com/v1/teams/{teamId}/roster",
@@ -1233,20 +1233,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "teamId": {
                 "type": "str",
-                "default": None,
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "default": null,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": ["rosterType", "season", "date", "hydrate", "fields"],
-        "required_params": [[]],
+        "required_params": [[]]
     },
     "team_stats": {
         "url": "https://statsapi.mlb.com/v1/teams/{teamId}/stats",
@@ -1254,17 +1254,17 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "teamId": {
                 "type": "str",
-                "default": None,
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "default": null,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": [
             "season",
@@ -1273,10 +1273,10 @@
             "stats",
             "sportIds",
             "sitCodes",
-            "fields",
+            "fields"
         ],
         "required_params": [["season", "group"]],
-        "note": "Use meta('statGroups') to look up valid values for group, meta('statTypes') for valid values for stats, and meta('situationCodes') for valid values for sitCodes. Use sitCodes with stats=statSplits.",
+        "note": "Use meta('statGroups') to look up valid values for group, meta('statTypes') for valid values for stats, and meta('situationCodes') for valid values for sitCodes. Use sitCodes with stats=statSplits."
     },
     "transactions": {
         "url": "https://statsapi.mlb.com/v1/transactions",
@@ -1284,9 +1284,9 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": [
@@ -1296,14 +1296,14 @@
             "startDate",
             "endDate",
             "sportId",
-            "fields",
+            "fields"
         ],
         "required_params": [
             ["teamId"],
             ["playerId"],
             ["date"],
-            ["startDate", "endDate"],
-        ],
+            ["startDate", "endDate"]
+        ]
     },
     "venue": {
         "url": "https://statsapi.mlb.com/v1/venues",
@@ -1311,13 +1311,13 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             }
         },
         "query_params": ["venueIds", "season", "hydrate", "fields"],
-        "required_params": [["venueIds"]],
+        "required_params": [["venueIds"]]
     },
     "meta": {
         "url": "https://statsapi.mlb.com/v1/{type}",
@@ -1325,22 +1325,20 @@
             "ver": {
                 "type": "str",
                 "default": "v1",
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
             },
             "type": {
                 "type": "str",
-                "default": None,
-                "leading_slash": False,
-                "trailing_slash": False,
-                "required": True,
-            },
+                "default": null,
+                "leading_slash": false,
+                "trailing_slash": false,
+                "required": true
+            }
         },
         "query_params": [[]],
         "required_params": [[]],
-        "note": "The meta endpoint is used to retrieve values to be used within other API calls. Available types: awards, baseballStats, eventTypes, gameStatus, gameTypes, hitTrajectories, jobTypes, languages, leagueLeaderTypes, logicalEvents, metrics, pitchCodes, pitchTypes, platforms, positions, reviewReasons, rosterTypes, scheduleEventTypes, situationCodes, sky, standingsTypes, statGroups, statTypes, windDirection.",
+        "note": "The meta endpoint is used to retrieve values to be used within other API calls. Available types: awards, baseballStats, eventTypes, gameStatus, gameTypes, hitTrajectories, jobTypes, languages, leagueLeaderTypes, logicalEvents, metrics, pitchCodes, pitchTypes, platforms, positions, reviewReasons, rosterTypes, scheduleEventTypes, situationCodes, sky, standingsTypes, statGroups, statTypes, windDirection."
     }
-    # v1/analytics - requires authentication
-    # v1/game/{gamePk}/guids - statcast data - requires authentication
 }

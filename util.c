@@ -20,8 +20,7 @@ size_t WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *user
   return realsize;
 }
 
-// TODO: Parse JSON helper function
-cJSON* parseJSONFile(const char* path) {
+cJSON* parseJSONFile(const char* path, const char* end_return_ptr) {
 	FILE *f = fopen(path, "r");
 	char *buffer;
 	size_t fileSize;
@@ -50,10 +49,10 @@ cJSON* parseJSONFile(const char* path) {
 
 	fclose(f);
 	
-	// TODO: use cJSON_ParseWithOpts(buffer, end_return_ptr, required_null_terminated)	
-	cJSON *jptr = cJSON_Parse(buffer);
-	if (!cJSON_GetErrorPtr()) {
-		printf("Failed to parse JSON i think...");
+	cJSON *jptr = cJSON_ParseWithOpts(buffer, &end_return_ptr, 0);
+	
+	if (!end_return_ptr) {
+		fprintf(stderr, "Error ptr: %s\n", end_return_ptr);
 		return NULL;
 	}
 	free(buffer);
@@ -62,4 +61,9 @@ cJSON* parseJSONFile(const char* path) {
 
 }
 
-
+void printcJSON(cJSON *item) {
+	if (item) {
+		const char *str = cJSON_Print(item);
+		fprintf(stdout, "%s\n", str);
+	}	
+}

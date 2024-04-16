@@ -18,7 +18,7 @@ clean:
 > rm -rf test
 > mkdir test
 
-unmount:
+u:
 > fusermount3 -u test
 
 wipe:
