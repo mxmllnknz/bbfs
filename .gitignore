@@ -165,3 +165,6 @@ bbfs
 
 # Object files
 *.o
+
+# Log file
+log.txt

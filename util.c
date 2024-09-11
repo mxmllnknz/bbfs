@@ -61,9 +61,22 @@ cJSON* parseJSONFile(const char* path, const char* end_return_ptr) {
 
 }
 
+cJSON* parseJSONChunk(struct MemoryChunk *mem) {
+	const char *end_return_ptr;	
+	cJSON *monitor_json = cJSON_ParseWithLengthOpts((char*)mem->memory, mem->size, &end_return_ptr, 0);
+	if (!end_return_ptr) {
+		fprintf(stderr, "Error ptr: %s\n", end_return_ptr);
+		cJSON_Delete(monitor_json);
+		return NULL;		
+	}
+	return monitor_json;
+	
+}
+
 void printcJSON(cJSON *item) {
 	if (item) {
 		const char *str = cJSON_Print(item);
 		fprintf(stdout, "%s\n", str);
 	}	
+	fprintf(stdout, "end of print\n");
 }

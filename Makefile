@@ -1,8 +1,8 @@
 .RECIPEPREFIX = >
 default: build
 
-build: clean bbfs.o util.o cJSON.o
-> gcc -Wall -o bbfs bbfs.o util.o cJSON.o -lcurl -g `pkg-config fuse --cflags --libs` 
+build: clean bbfs.o util.o cJSON.o log.o
+> gcc -Wall -o bbfs bbfs.o util.o cJSON.o log.o -lcurl -g `pkg-config fuse --cflags --libs` 
 
 bbfs.o: bbfs.c util.h cJSON.h
 > gcc -c bbfs.c -lcurl -g `pkg-config fuse --cflags --libs`
@@ -12,6 +12,9 @@ util.o: util.c cJSON.h
 
 cJSON.o: cJSON.c
 > gcc -g -c cJSON.c
+
+log.o: log.c
+> gcc -g -c log.c
 
 clean:
 > rm -rf bbfs

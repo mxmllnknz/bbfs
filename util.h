@@ -15,5 +15,7 @@ size_t WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *user
 
 cJSON* parseJSONFile(const char *path, const char *end_return_ptr);
 
+cJSON* parseJSONChunk(struct MemoryChunk *mem); 
+
 void printcJSON(cJSON *item);
 #endif

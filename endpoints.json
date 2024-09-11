@@ -1,6 +1,6 @@
 {
     "attendance": {
-        "url": "https://statsapi.mlb.com/v1/attendance",
+        "url": "https://statsapi.mlb.com/api/v1/attendance",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -22,7 +22,7 @@
         "required_params": [["teamId"], ["leagueId"], ["leagueListid"]]
     },
     "awards": {
-        "url": "https://statsapi.mlb.com/v1/awards{awardId}{recipients}",
+        "url": "https://statsapi.mlb.com/api/v1/awards{awardId}{recipients}",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -53,7 +53,7 @@
         "note": "Call awards endpoint with no parameters to return a list of awardIds."
     },
     "conferences": {
-        "url": "https://statsapi.mlb.com/v1/conferences",
+        "url": "https://statsapi.mlb.com/api/v1/conferences",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -67,7 +67,7 @@
         "required_params": [[]]
     },
     "divisions": {
-        "url": "https://statsapi.mlb.com/v1/divisions",
+        "url": "https://statsapi.mlb.com/api/v1/divisions",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -82,7 +82,7 @@
         "note": "Call divisions endpoint with no parameters to return a list of divisions."
     },
     "draft": {
-        "url": "https://statsapi.mlb.com/v1/draft{prospects}{year}{latest}",
+        "url": "https://statsapi.mlb.com/api/v1/draft{prospects}{year}{latest}",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -134,7 +134,7 @@
         "note": "No query parameters are honored when latest endpoint is queried (year is still required). Prospects and Latest cannot be used together."
     },
     "game": {
-        "url": "https://statsapi.mlb.com/v1/game/{gamePk}/feed/live",
+        "url": "https://statsapi.mlb.com/api/v1/game/{gamePk}/feed/live",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -155,7 +155,7 @@
         "required_params": [[]]
     },
     "game_diff": {
-        "url": "https://statsapi.mlb.com/v1/game/{gamePk}/feed/live/diffPatch",
+        "url": "https://statsapi.mlb.com/api/v1/game/{gamePk}/feed/live/diffPatch",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -176,7 +176,7 @@
         "required_params": [["startTimecode", "endTimecode"]]
     },
     "game_timestamps": {
-        "url": "https://statsapi.mlb.com/v1/game/{gamePk}/feed/live/timestamps",
+        "url": "https://statsapi.mlb.com/api/v1/game/{gamePk}/feed/live/timestamps",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -197,7 +197,7 @@
         "required_params": [[]]
     },
     "game_changes": {
-        "url": "https://statsapi.mlb.com/v1/game/changes",
+        "url": "https://statsapi.mlb.com/api/v1/game/changes",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -211,7 +211,7 @@
         "required_params": [["updatedSince"]]
     },
     "game_contextMetrics": {
-        "url": "https://statsapi.mlb.com/v1/game/{gamePk}/contextMetrics",
+        "url": "https://statsapi.mlb.com/api/v1/game/{gamePk}/contextMetrics",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -232,7 +232,7 @@
         "required_params": [[]]
     },
     "game_winProbability": {
-        "url": "https://statsapi.mlb.com/v1/game/{gamePk}/winProbability",
+        "url": "https://statsapi.mlb.com/api/v1/game/{gamePk}/winProbability",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -254,7 +254,7 @@
         "note": "If you only want the current win probability for each team, try the game_contextMetrics endpoint instad."
     },
     "game_boxscore": {
-        "url": "https://statsapi.mlb.com/v1/game/{gamePk}/boxscore",
+        "url": "https://statsapi.mlb.com/api/v1/game/{gamePk}/boxscore",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -275,7 +275,7 @@
         "required_params": [[]]
     },
     "game_content": {
-        "url": "https://statsapi.mlb.com/v1/game/{gamePk}/content",
+        "url": "https://statsapi.mlb.com/api/v1/game/{gamePk}/content",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -296,7 +296,7 @@
         "required_params": [[]]
     },
     "game_color": {
-        "url": "https://statsapi.mlb.com/v1/game/{gamePk}/feed/color",
+        "url": "https://statsapi.mlb.com/api/v1/game/{gamePk}/feed/color",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -317,7 +317,7 @@
         "required_params": [[]]
     },
     "game_color_diff": {
-        "url": "https://statsapi.mlb.com/v1/game/{gamePk}/feed/color/diffPatch",
+        "url": "https://statsapi.mlb.com/api/v1/game/{gamePk}/feed/color/diffPatch",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -338,7 +338,7 @@
         "required_params": [["startTimeCode", "endTimeCode"]]
     },
     "game_color_timestamps": {
-        "url": "https://statsapi.mlb.com/v1/game/{gamePk}/feed/color/timestamps",
+        "url": "https://statsapi.mlb.com/api/v1/game/{gamePk}/feed/color/timestamps",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -359,7 +359,7 @@
         "required_params": [[]]
     },
     "game_linescore": {
-        "url": "https://statsapi.mlb.com/v1/game/{gamePk}/linescore",
+        "url": "https://statsapi.mlb.com/api/v1/game/{gamePk}/linescore",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -380,7 +380,7 @@
         "required_params": [[]]
     },
     "game_playByPlay": {
-        "url": "https://statsapi.mlb.com/v1/game/{gamePk}/playByPlay",
+        "url": "https://statsapi.mlb.com/api/v1/game/{gamePk}/playByPlay",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -401,7 +401,7 @@
         "required_params": [[]]
     },
     "gamePace": {
-        "url": "https://statsapi.mlb.com/v1/gamePace",
+        "url": "https://statsapi.mlb.com/api/v1/gamePace",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -428,7 +428,7 @@
         "required_params": [["season"]]
     },
     "highLow": {
-        "url": "https://statsapi.mlb.com/v1/highLow/{orgType}",
+        "url": "https://statsapi.mlb.com/api/v1/highLow/{orgType}",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -460,7 +460,7 @@
         "note": "Valid values for orgType parameter: player, team, division, league, sport, types."
     },
     "homeRunDerby": {
-        "url": "https://statsapi.mlb.com/v1/homeRunDerby/{gamePk}{bracket}{pool}",
+        "url": "https://statsapi.mlb.com/api/v1/homeRunDerby/{gamePk}{bracket}{pool}",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -499,7 +499,7 @@
         "required_params": [[]]
     },
     "league": {
-        "url": "https://statsapi.mlb.com/v1/league",
+        "url": "https://statsapi.mlb.com/api/v1/league",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -513,7 +513,7 @@
         "required_params": [["sportId"], ["leagueIds"]]
     },
     "league_allStarBallot": {
-        "url": "https://statsapi.mlb.com/v1/league/{leagueId}/allStarBallot",
+        "url": "https://statsapi.mlb.com/api/v1/league/{leagueId}/allStarBallot",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -534,7 +534,7 @@
         "required_params": [["season"]]
     },
     "league_allStarWriteIns": {
-        "url": "https://statsapi.mlb.com/v1/league/{leagueId}/allStarWriteIns",
+        "url": "https://statsapi.mlb.com/api/v1/league/{leagueId}/allStarWriteIns",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -555,7 +555,7 @@
         "required_params": [["season"]]
     },
     "league_allStarFinalVote": {
-        "url": "https://statsapi.mlb.com/v1/league/{leagueId}/allStarFinalVote",
+        "url": "https://statsapi.mlb.com/api/v1/league/{leagueId}/allStarFinalVote",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -576,7 +576,7 @@
         "required_params": [["season"]]
     },
     "people": {
-        "url": "https://statsapi.mlb.com/v1/people",
+        "url": "https://statsapi.mlb.com/api/v1/people",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -590,7 +590,7 @@
         "required_params": [["personIds"]]
     },
     "people_changes": {
-        "url": "https://statsapi.mlb.com/v1/people/changes",
+        "url": "https://statsapi.mlb.com/api/v1/people/changes",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -604,7 +604,7 @@
         "required_params": [[]]
     },
     "people_freeAgents": {
-        "url": "https://statsapi.mlb.com/v1/people/freeAgents",
+        "url": "https://statsapi.mlb.com/api/v1/people/freeAgents",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -625,7 +625,7 @@
         "required_params": [[]]
     },
     "person": {
-        "url": "https://statsapi.mlb.com/v1/people/{personId}",
+        "url": "https://statsapi.mlb.com/api/v1/people/{personId}",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -646,7 +646,7 @@
         "required_params": [[]]
     },
     "person_stats": {
-        "url": "https://statsapi.mlb.com/v1/people/{personId}/stats/game/{gamePk}",
+        "url": "https://statsapi.mlb.com/api/v1/people/{personId}/stats/game/{gamePk}",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -675,7 +675,7 @@
         "note": "Specify 'current' instead of a gamePk for a player's current game stats."
     },
     "jobs": {
-        "url": "https://statsapi.mlb.com/v1/jobs",
+        "url": "https://statsapi.mlb.com/api/v1/jobs",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -689,7 +689,7 @@
         "required_params": [["jobType"]]
     },
     "jobs_umpires": {
-        "url": "https://statsapi.mlb.com/v1/jobs/umpires",
+        "url": "https://statsapi.mlb.com/api/v1/jobs/umpires",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -703,7 +703,7 @@
         "required_params": [[]]
     },
     "jobs_umpire_games": {
-        "url": "https://statsapi.mlb.com/v1/jobs/umpires/games/{umpireId}",
+        "url": "https://statsapi.mlb.com/api/v1/jobs/umpires/games/{umpireId}",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -724,7 +724,7 @@
         "required_params": [["season"]]
     },
     "jobs_datacasters": {
-        "url": "https://statsapi.mlb.com/v1/jobs/datacasters",
+        "url": "https://statsapi.mlb.com/api/v1/jobs/datacasters",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -738,7 +738,7 @@
         "required_params": [[]]
     },
     "jobs_officialScorers": {
-        "url": "https://statsapi.mlb.com/v1/jobs/officialScorers",
+        "url": "https://statsapi.mlb.com/api/v1/jobs/officialScorers",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -752,7 +752,7 @@
         "required_params": [[]]
     },
     "schedule": {
-        "url": "https://statsapi.mlb.com/v1/schedule",
+        "url": "https://statsapi.mlb.com/api/v1/schedule",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -782,7 +782,7 @@
         "required_params": [["sportId"], ["gamePk"], ["gamePks"]]
     },
     "schedule_tied": {
-        "url": "https://statsapi.mlb.com/v1/schedule/games/tied",
+        "url": "https://statsapi.mlb.com/api/v1/schedule/games/tied",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -796,7 +796,7 @@
         "required_params": [["season"]]
     },
     "schedule_postseason": {
-        "url": "https://statsapi.mlb.com/v1/schedule/postseason",
+        "url": "https://statsapi.mlb.com/api/v1/schedule/postseason",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -818,7 +818,7 @@
         "required_params": [[]]
     },
     "schedule_postseason_series": {
-        "url": "https://statsapi.mlb.com/v1/schedule/postseason/series",
+        "url": "https://statsapi.mlb.com/api/v1/schedule/postseason/series",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -839,7 +839,7 @@
         "required_params": [[]]
     },
     "schedule_postseason_tuneIn": {
-        "url": "https://statsapi.mlb.com/v1/schedule/postseason/tuneIn",
+        "url": "https://statsapi.mlb.com/api/v1/schedule/postseason/tuneIn",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -854,7 +854,7 @@
         "note": "The schedule_postseason_tuneIn endpoint appears to return no data."
     },
     "seasons": {
-        "url": "https://statsapi.mlb.com/v1/seasons{all}",
+        "url": "https://statsapi.mlb.com/api/v1/seasons{all}",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -878,7 +878,7 @@
         "note": "Include 'all' parameter with value of True to query all seasons. The divisionId and leagueId parameters are supported when 'all' is used."
     },
     "season": {
-        "url": "https://statsapi.mlb.com/v1/seasons/{seasonId}",
+        "url": "https://statsapi.mlb.com/api/v1/seasons/{seasonId}",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -899,7 +899,7 @@
         "required_params": [["sportId"]]
     },
     "sports": {
-        "url": "https://statsapi.mlb.com/v1/sports",
+        "url": "https://statsapi.mlb.com/api/v1/sports",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -913,7 +913,7 @@
         "required_params": [[]]
     },
     "sports_players": {
-        "url": "https://statsapi.mlb.com/v1/sports/{sportId}/players",
+        "url": "https://statsapi.mlb.com/api/v1/sports/{sportId}/players",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -934,7 +934,7 @@
         "required_params": [["season"]]
     },
     "standings": {
-        "url": "https://statsapi.mlb.com/v1/standings",
+        "url": "https://statsapi.mlb.com/api/v1/standings",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -955,7 +955,7 @@
         "required_params": [["leagueId"]]
     },
     "stats": {
-        "url": "https://statsapi.mlb.com/v1/stats",
+        "url": "https://statsapi.mlb.com/api/v1/stats",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -988,7 +988,7 @@
         "note": "If no limit is specified, the response will be limited to 50 records."
     },
     "stats_leaders": {
-        "url": "https://statsapi.mlb.com/v1/stats/leaders",
+        "url": "https://statsapi.mlb.com/api/v1/stats/leaders",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -1015,7 +1015,7 @@
         "note": "If excluding season parameter to get all time leaders, include statType=statsSingleSeason or you will likely not get any results."
     },
     "stats_streaks": {
-        "url": "https://statsapi.mlb.com/v1/stats/streaks",
+        "url": "https://statsapi.mlb.com/api/v1/stats/streaks",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -1039,7 +1039,7 @@
         "note": "Valid streakType values: 'hittingStreakOverall' 'hittingStreakHome' 'hittingStreakAway' 'onBaseOverall' 'onBaseHome' 'onBaseAway'. Valid streakSpan values: 'career' 'season' 'currentStreak' 'currentStreakInSeason' 'notable' 'notableInSeason'."
     },
     "teams": {
-        "url": "https://statsapi.mlb.com/v1/teams",
+        "url": "https://statsapi.mlb.com/api/v1/teams",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -1062,7 +1062,7 @@
         "required_params": [[]]
     },
     "teams_history": {
-        "url": "https://statsapi.mlb.com/v1/teams/history",
+        "url": "https://statsapi.mlb.com/api/v1/teams/history",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -1076,7 +1076,7 @@
         "required_params": [["teamIds"]]
     },
     "teams_stats": {
-        "url": "https://statsapi.mlb.com/v1/teams/stats",
+        "url": "https://statsapi.mlb.com/api/v1/teams/stats",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -1102,7 +1102,7 @@
         "note": "Use meta('statGroups') to look up valid values for group, and meta('statTypes') for valid values for stats."
     },
     "teams_affiliates": {
-        "url": "https://statsapi.mlb.com/v1/teams/affiliates",
+        "url": "https://statsapi.mlb.com/api/v1/teams/affiliates",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -1116,7 +1116,7 @@
         "required_params": [["teamIds"]]
     },
     "team": {
-        "url": "https://statsapi.mlb.com/v1/teams/{teamId}",
+        "url": "https://statsapi.mlb.com/api/v1/teams/{teamId}",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -1137,7 +1137,7 @@
         "required_params": [[]]
     },
     "team_alumni": {
-        "url": "https://statsapi.mlb.com/v1/teams/{teamId}/alumni",
+        "url": "https://statsapi.mlb.com/api/v1/teams/{teamId}/alumni",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -1158,7 +1158,7 @@
         "required_params": [["season", "group"]]
     },
     "team_coaches": {
-        "url": "https://statsapi.mlb.com/v1/teams/{teamId}/coaches",
+        "url": "https://statsapi.mlb.com/api/v1/teams/{teamId}/coaches",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -1179,7 +1179,7 @@
         "required_params": [[]]
     },
     "team_personnel": {
-        "url": "https://statsapi.mlb.com/v1/teams/{teamId}/personnel",
+        "url": "https://statsapi.mlb.com/api/v1/teams/{teamId}/personnel",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -1200,7 +1200,7 @@
         "required_params": [[]]
     },
     "team_leaders": {
-        "url": "https://statsapi.mlb.com/v1/teams/{teamId}/leaders",
+        "url": "https://statsapi.mlb.com/api/v1/teams/{teamId}/leaders",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -1228,7 +1228,7 @@
         "required_params": [["leaderCategories", "season"]]
     },
     "team_roster": {
-        "url": "https://statsapi.mlb.com/v1/teams/{teamId}/roster",
+        "url": "https://statsapi.mlb.com/api/v1/teams/{teamId}/roster",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -1249,7 +1249,7 @@
         "required_params": [[]]
     },
     "team_stats": {
-        "url": "https://statsapi.mlb.com/v1/teams/{teamId}/stats",
+        "url": "https://statsapi.mlb.com/api/v1/teams/{teamId}/stats",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -1279,7 +1279,7 @@
         "note": "Use meta('statGroups') to look up valid values for group, meta('statTypes') for valid values for stats, and meta('situationCodes') for valid values for sitCodes. Use sitCodes with stats=statSplits."
     },
     "transactions": {
-        "url": "https://statsapi.mlb.com/v1/transactions",
+        "url": "https://statsapi.mlb.com/api/v1/transactions",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -1306,7 +1306,7 @@
         ]
     },
     "venue": {
-        "url": "https://statsapi.mlb.com/v1/venues",
+        "url": "https://statsapi.mlb.com/api/v1/venues",
         "path_params": {
             "ver": {
                 "type": "str",
@@ -1320,7 +1320,7 @@
         "required_params": [["venueIds"]]
     },
     "meta": {
-        "url": "https://statsapi.mlb.com/v1/{type}",
+        "url": "https://statsapi.mlb.com/api/v1/{type}",
         "path_params": {
             "ver": {
                 "type": "str",
